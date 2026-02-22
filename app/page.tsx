@@ -165,13 +165,6 @@ export default function Home() {
         ref={leavesRef}
         className="h-screen relative bg-linear-to-l  from-[#FFFEFE26] to-[#DFE2D2] text-[#4E482E] flex items-center justify-center"
       >
-        {/* <Image 
-          src="/images/amlaBottle.png"
-          alt="Bottle"
-          height={100000000000}
-          width={100000000000}
-          className=" md:w-150"
-        /> */}
         <h1 className="text-[#4E482E] absolute text-9xl w-2/3 text-right top-1/6 right-1/8 font-400">
           Calmed by <span className="font-extrabold">Ashwagandha</span>
         </h1>
@@ -190,36 +183,22 @@ export default function Home() {
       </section>
 
       <section className="h-screen bg-linear-to-l  from-[#FFFEFE26] to-[#DFE2D2] text-[#4E482E] font-lexend flex items-center justify-center">
-<div className="max-w-7xl p-14 flex justify-between items-center gap-75">
-          {/* <p className="text-3xl font-light w-2/4">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, 
-        </p> */}
-        <Image 
-          src="/images/p1.png"
-          alt="Bottle"
-          height={1000}
-          width={10000}
-          className="w-150"
-        />
-        <Image 
-          src="/images/p2.png"
-          alt="Bottle"
-          height={1000}
-          width={10000}
-          className="w-150"
-        />
-        {/* <p className="text-3xl font-light w-2/4 text-right">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, 
-        </p> */}
-</div>
+        <div className="max-w-7xl p-14 flex justify-between items-center gap-75">
+          <Image
+            src="/images/p1.png"
+            alt="Bottle"
+            height={1000}
+            width={10000}
+            className="w-150"
+          />
+          <Image
+            src="/images/p2.png"
+            alt="Bottle"
+            height={1000}
+            width={10000}
+            className="w-150"
+          />
+        </div>
       </section>
     </main>
   );
