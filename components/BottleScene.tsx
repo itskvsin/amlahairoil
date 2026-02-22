@@ -26,8 +26,8 @@ export default function BottleScene() {
 
     tl.fromTo(
       bottle,
-      { y: 72,x: 50 ,opacity: 1, rotate: 82 },
-      { y: 0, opacity: 1,rotate: 45 ,duration: 1, scale: 1.5 },
+      { y: 72, x: 50, opacity: 1, rotate: 82 },
+      { y: 0, opacity: 1, rotate: 45, duration: 1, scale: 1.5 },
     )
       .to(bottle, {
         rotate: "-=80",
@@ -44,8 +44,10 @@ export default function BottleScene() {
         duration: 1,
       })
       .to(bottle, {
-        scale: 0.5,
-        opacity: 0,
+        rotate: "-=100",
+        yPercent: "-40",
+        xPercent: "-14",
+        scale: 1.3,
         duration: 1,
       });
   }, []);
@@ -53,7 +55,7 @@ export default function BottleScene() {
   return (
     <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
       <Image
-        ref={bottleRef} 
+        ref={bottleRef}
         src="/images/amlaBottle.png"
         alt="Bottle"
         height={1000}

@@ -7,8 +7,9 @@ import gsap from "gsap";
 import { Lexend } from "next/font/google";
 import { use, useEffect, useRef } from "react";
 
-import {ReactLenis} from "lenis/react";
+import { ReactLenis } from "lenis/react";
 import Lenis from "lenis";
+import Image from "next/image";
 
 // import Image from "next/image";
 
@@ -23,12 +24,11 @@ export default function Home() {
   const lenisRef = useRef<any>(null);
 
   useEffect(() => {
-
     const lenis = new Lenis({
-  autoRaf: true,
-  duration: 1.5,
-  prevent: (node) => node.id === "get_burger-content"
-});
+      autoRaf: true,
+      duration: 1.5,
+      prevent: (node) => node.id === "get_burger-content",
+    });
 
     function update(time: any) {
       lenisRef.current?.lenis?.raf(time * 1000);
@@ -36,7 +36,7 @@ export default function Home() {
 
     gsap.ticker.add(update);
 
-    return () => gsap.ticker.remove(update)
+    return () => gsap.ticker.remove(update);
   });
 
   useGSAP(() => {
@@ -103,9 +103,7 @@ export default function Home() {
 
   return (
     <main className={`bg-white ${lexend.className} overflow-hidden`}>
-
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
-
 
       <Navbar btnColor="black" />
 
@@ -191,8 +189,37 @@ export default function Home() {
         />
       </section>
 
-      <section className="h-screen bg-zinc-700 text-white flex items-center justify-center">
-        <h1 className="text-6xl">Section 4</h1>
+      <section className="h-screen bg-linear-to-l  from-[#FFFEFE26] to-[#DFE2D2] text-[#4E482E] font-lexend flex items-center justify-center">
+<div className="max-w-7xl p-14 flex justify-between items-center gap-75">
+          {/* <p className="text-3xl font-light w-2/4">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, 
+        </p> */}
+        <Image 
+          src="/images/p1.png"
+          alt="Bottle"
+          height={1000}
+          width={10000}
+          className="w-150"
+        />
+        <Image 
+          src="/images/p2.png"
+          alt="Bottle"
+          height={1000}
+          width={10000}
+          className="w-150"
+        />
+        {/* <p className="text-3xl font-light w-2/4 text-right">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, 
+        </p> */}
+</div>
       </section>
     </main>
   );
