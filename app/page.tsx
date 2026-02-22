@@ -1,6 +1,7 @@
 "use client";
 
 import BottleScene from "@/components/BottleScene";
+import Navbar from "@/components/layout/Navbar";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Lexend } from "next/font/google";
@@ -80,6 +81,8 @@ export default function Home() {
 
   return (
     <main className={`bg-white ${lexend.className} overflow-hidden`}>
+      <Navbar btnColor="black"/>
+
       <BottleScene />
 
       <section

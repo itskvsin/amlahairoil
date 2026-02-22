@@ -54,7 +54,7 @@ export default function BottleScene() {
     <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
       <Image
         ref={bottleRef} 
-        src="/images/amlaBottle.png"
+        src="/images/bottle.png"
         alt="Bottle"
         height={100000000000}
         width={100000000000}
