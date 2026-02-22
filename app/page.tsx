@@ -5,7 +5,11 @@ import Navbar from "@/components/layout/Navbar";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Lexend } from "next/font/google";
-import { useRef } from "react";
+import { use, useEffect, useRef } from "react";
+
+import {ReactLenis} from "lenis/react";
+import Lenis from "lenis";
+
 // import Image from "next/image";
 
 const lexend = Lexend({
@@ -16,6 +20,24 @@ export default function Home() {
   const fadeBg = useRef<HTMLDivElement>(null);
   const amlaRef = useRef<HTMLDivElement>(null);
   const leavesRef = useRef<HTMLDivElement>(null);
+  const lenisRef = useRef<any>(null);
+
+  useEffect(() => {
+
+    const lenis = new Lenis({
+  autoRaf: true,
+  duration: 1.5,
+  prevent: (node) => node.id === "get_burger-content"
+});
+
+    function update(time: any) {
+      lenisRef.current?.lenis?.raf(time * 1000);
+    }
+
+    gsap.ticker.add(update);
+
+    return () => gsap.ticker.remove(update)
+  });
 
   useGSAP(() => {
     const bg = fadeBg.current;
@@ -62,9 +84,9 @@ export default function Home() {
     leaves.forEach((leaf, index) => {
       gsap.fromTo(
         leaf,
-        { y: 200, duration: 1 },
+        { y: 400, duration: 1 },
         {
-          y: -200,
+          y: -450,
           opacity: 1,
           ease: "none",
           stagger: index * 1.8,
@@ -81,7 +103,11 @@ export default function Home() {
 
   return (
     <main className={`bg-white ${lexend.className} overflow-hidden`}>
-      <Navbar btnColor="black"/>
+
+      <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
+
+
+      <Navbar btnColor="black" />
 
       <BottleScene />
 
@@ -148,7 +174,9 @@ export default function Home() {
           width={100000000000}
           className=" md:w-150"
         /> */}
-        <h1 className="text-[#4E482E] absolute text-9xl w-2/3 text-right top-1/6 right-1/8 font-400">Calmed by <span className="font-extrabold">Ashwagandha</span></h1>
+        <h1 className="text-[#4E482E] absolute text-9xl w-2/3 text-right top-1/6 right-1/8 font-400">
+          Calmed by <span className="font-extrabold">Ashwagandha</span>
+        </h1>
         <img
           src="/images/leaves/leaf1.png"
           className="leaf leaf-3 absolute w-160 -bottom-5/14 left-46 rotate-20"

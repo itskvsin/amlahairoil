@@ -31,16 +31,16 @@ export default function BottleScene() {
     )
       .to(bottle, {
         rotate: "-=80",
-        scale: 2,
-        yPercent: 80,
-        xPercent: 30,
+        scale: 1.6,
+        yPercent: 40,
+        xPercent: 50,
         duration: 1,
       })
       .to(bottle, {
-        rotate: "-=50",
-        scale: 1.8,
-        yPercent: 20,
-        xPercent: 40,
+        rotate: "-=45",
+        scale: 1.7,
+        yPercent: 10,
+        xPercent: 25,
         duration: 1,
       })
       .to(bottle, {
@@ -54,10 +54,10 @@ export default function BottleScene() {
     <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-50">
       <Image
         ref={bottleRef} 
-        src="/images/bottle.png"
+        src="/images/amlaBottle.png"
         alt="Bottle"
-        height={100000000000}
-        width={100000000000}
+        height={1000}
+        width={1000}
         className=" md:w-150"
       />
     </div>
