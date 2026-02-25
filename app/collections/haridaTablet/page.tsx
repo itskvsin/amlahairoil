@@ -84,36 +84,41 @@ export default function ProductPage() {
         <Image
           src="/images/amla.png"
           alt="Amla"
-          width={200}
-          height={200}
-          className="amla absolute top-10 -rotate-40 left-4/4 -translate-x-1/2"
-        />
-
-        {/* Bottom Right Amla */}
-        <Image
-          src="/images/amla.png"
-          alt="Amla"
-          width={200}
-          height={200}
-          className="amla absolute bottom-10 right-70 rotate-45"
-        />
-
-        {/* Bottom Center Blur Amla */}
-        <Image
-          src="/images/amla.png"
-          alt="Amla"
           width={250}
           height={250}
-          className="amla absolute -bottom-20 left-1/3 blur-md opacity-80"
+          className="absolute -top-40 -left-20 blur-sm -rotate-45"
         />
 
-        {/* Right Decorative Leaf */}
+        <Image
+          src="/images/frontAmla.png"
+          alt="Amla"
+          width={200}
+          height={200}
+          className="absolute -top-30 right-1/5  rotate-140"
+        />
+
         <Image
           src="/images/leaves/leaf1.png"
           alt="Leaf"
           width={250}
           height={250}
-          className="leaf absolute -left-40 rotate-120 -top-3/6 blur-[2px]"
+          className="absolute -bottom-20 -left-20 rotate-45"
+        />
+
+        <Image
+          src="/images/amla.png"
+          alt="Amla"
+          width={250}
+          height={250}
+          className="absolute bottom-10 right-10 rotate-45"
+        />
+
+        <Image
+          src="/images/leaves/leaf1.png"
+          alt="Leaf"
+          width={250}
+          height={250}
+          className="absolute bottom-2/4 -right-20 -rotate-45 blur-xs"
         />
 
         <div className="w-full max-w-350 flex items-center justify-between z-10">

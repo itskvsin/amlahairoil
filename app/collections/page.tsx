@@ -26,7 +26,7 @@ export default function CollectionsPage() {
         ScrollTrigger.create({
           trigger: section,
           start: "top top",
-          end: "+=100%",
+          end: "+=80%",
           pin: true,
           scrub: true,
         });
@@ -44,21 +44,21 @@ export default function CollectionsPage() {
 
       {/* ================= FIXED BACKGROUND ================= */}
 
-      <div className="fixed inset-0 z-10 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 z-1 overflow-hidden pointer-events-none">
         <Image
           src="/images/amla.png"
           alt="Amla"
           width={250}
           height={250}
-          className="absolute top-0 left-0 blur-2xl opacity-40"
+          className="absolute -top-40 -left-20 blur-sm -rotate-45"
         />
 
         <Image
-          src="/images/amla.png"
+          src="/images/frontAmla.png"
           alt="Amla"
           width={200}
           height={200}
-          className="absolute top-10 right-10"
+          className="absolute -top-30 right-1/5  rotate-140"
         />
 
         <Image
@@ -66,7 +66,15 @@ export default function CollectionsPage() {
           alt="Leaf"
           width={250}
           height={250}
-          className="absolute bottom-0 left-0"
+          className="absolute -bottom-20 -left-20 rotate-45"
+        />
+
+        <Image
+          src="/images/frontAmla.png"
+          alt="Amla"
+          width={250}
+          height={250}
+          className="absolute -bottom-50 left-1/6 rotate-140 blur-sm"
         />
 
         <Image
@@ -74,7 +82,15 @@ export default function CollectionsPage() {
           alt="Amla"
           width={250}
           height={250}
-          className="absolute bottom-10 right-10"
+          className="absolute bottom-10 right-10 rotate-45"
+        />
+
+        <Image
+          src="/images/leaves/leaf1.png"
+          alt="Leaf"
+          width={250}
+          height={250}
+          className="absolute bottom-2/4 -right-20 -rotate-45 blur-xs"
         />
       </div>
 
@@ -111,13 +127,19 @@ export default function CollectionsPage() {
         </h1>
 
         <div className="flex gap-20 mt-20">
-                    <Link href="/collections/haridaTablet">
+          <Link href="/collections/haridaTablet">
             {" "}
-            <ProductCard image="/images/tablets/product1.png" title="Hairda Tablets" />
+            <ProductCard
+              image="/images/tablets/product1.png"
+              title="Hairda Tablets"
+            />
           </Link>
           <Link href="/collections/amlakiTablet">
             {" "}
-            <ProductCard image="/images/tablets/product2.png" title="Amlaki Tablets" />
+            <ProductCard
+              image="/images/tablets/product2.png"
+              title="Amlaki Tablets"
+            />
           </Link>
         </div>
       </section>
@@ -135,7 +157,10 @@ export default function CollectionsPage() {
         <div className="mt-20">
           <Link href="/collections/hairLepa">
             {" "}
-            <ProductCard image="/images/hairLepa/product1.png" title="Hair Lepa" />
+            <ProductCard
+              image="/images/hairLepa/product1.png"
+              title="Hair Lepa"
+            />
           </Link>
         </div>
       </section>
@@ -145,8 +170,8 @@ export default function CollectionsPage() {
 
 function ProductCard({ image, title }: { image: string; title: string }) {
   return (
-    <div className="w-90 h-full bg-white rounded-[40px] shadow-xl overflow-hidden flex flex-col items-center justify-between cursor-pointer">
-      <div>
+    <div className="w-90 h-full z-2 bg-white rounded-[40px] shadow-xl overflow-hidden flex flex-col items-center justify-between cursor-pointer">
+      <div className="py-6">
         <Image
           src={image}
           alt={title}

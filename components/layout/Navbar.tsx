@@ -4,30 +4,29 @@ import { Montagu_Slab } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "../Button";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const Navbar = ({btnColor}: {btnColor: string}) => {
+const Navbar = ({ btnColor }: { btnColor: string }) => {
   return (
     <div
       className={`${dmSans.className} z-99 bg-transparent text-black fixed h-40 text-2xl font-600 flex items-center right-1/5 w-6xl font-semibold`}
     >
       <div className="flex items-center justify-between w-full">
-        <div className="img flex w-20 gap-10">
-          <Image
-            src="/images/navbar/cart.png"
-            alt="Logo"
-            width={100}
-            height={50}
-          />
-          <Image
-            src="/images/navbar/user.png"
-            alt="Logo"
-            width={100}
-            height={50}
-          />
+        <div className="img flex w-20 gap-6 items-center">
+          <Link href="/cart" className="cursor-pointer">
+            <div className="p-4 bg-white rounded-full">
+              <FaShoppingCart className="h-6 w-6 " />
+            </div>
+          </Link>
+          <div className="p-4 bg-white rounded-full">
+            <FaUser className="h-6 w-6 " />
+          </div>
         </div>
         <div className="links flex gap-14">
           <Link href="/collections" className="px-4">
