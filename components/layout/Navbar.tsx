@@ -7,7 +7,6 @@ import Button from "../Button";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 
-
 const dmSans = DM_Sans({
   subsets: ["latin"],
 });
@@ -24,9 +23,11 @@ const Navbar = ({ btnColor }: { btnColor: string }) => {
               <FaShoppingCart className="h-6 w-6 " />
             </div>
           </Link>
-          <div className="p-4 bg-white rounded-full">
-            <FaUser className="h-6 w-6 " />
-          </div>
+          <Link href="/login">
+            <div className="p-4 bg-white rounded-full">
+              <FaUser className="h-6 w-6 " />
+            </div>
+          </Link>
         </div>
         <div className="links flex gap-14">
           <Link href="/collections" className="px-4">
