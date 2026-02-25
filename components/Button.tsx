@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-const Button = ({ bgColor }: { bgColor: string }) => {
+const Button = ({ bgColor, title }: { bgColor: string, title: string }) => {
   return (
     <button
-      className={`text-xl flex text-white items-center ${bgColor == "black" ? "bg-black" : "border-white border-2 bg-transparent"} py-4 px-6 rounded-full font-Montagu_Slab font-light`}
+      className={`text-xl flex text-white items-center cursor-pointer ${bgColor == "black" ? "bg-black" : "bg-[#4E482E] text-white px-8 py-4 rounded-full cursor-pointer text-lg hover:scale-105 transition"} py-4 px-6 rounded-full font-Montagu_Slab font-light`}
     >
-      Shop Now
+      {title}
       <Image
         src="/images/navbar/arrow-up-right.png"
         alt="Logo"

@@ -30,7 +30,7 @@ const Navbar = ({btnColor}: {btnColor: string}) => {
           />
         </div>
         <div className="links flex gap-14">
-          <Link href="/" className="px-4">
+          <Link href="/collections" className="px-4">
             Collections
           </Link>
           <Link href="/" className="px-4">
@@ -55,7 +55,7 @@ const Navbar = ({btnColor}: {btnColor: string}) => {
                 className="w-5"
               />
             </button> */}
-            <Button bgColor={btnColor} />
+            <Button bgColor={btnColor} title="Shop Now" />
           </Link>
         </div>
       </div>

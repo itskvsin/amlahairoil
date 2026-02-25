@@ -8,6 +8,7 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Button from "@/components/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,27 +68,6 @@ export default function ProductPage() {
     { scope: containerRef },
   );
 
-  const products = [
-    { id: "1", name: "Hair Oil", subtitle: "Hair Oil" },
-    { id: "2", name: "Hair Oil", subtitle: "Hair Oil" },
-    { id: "3", name: "Hair Oil", subtitle: "Hair Oil" },
-    { id: "4", name: "Hair Oil", subtitle: "Hair Oil" },
-  ];
-
-  const increaseQty = (id: string) => {
-    setCart((prev) => ({
-      ...prev,
-      [id]: (prev[id] || 1) + 1,
-    }));
-  };
-
-  const decreaseQty = (id: string) => {
-    setCart((prev) => ({
-      ...prev,
-      [id]: prev[id] > 1 ? prev[id] - 1 : 1,
-    }));
-  };
-
   return (
     <main
       ref={containerRef}
@@ -95,75 +75,78 @@ export default function ProductPage() {
     >
       <Navbar btnColor="black" />
 
-      {/* PRODUCT SECTION */}
+      {/* ================= PRODUCT DETAILS ================= */}
+      {/* ================= PRODUCT DETAILS ================= */}
       <section
         ref={amlaRef}
-        className="pt-32 pb-20 flex flex-col items-center relative z-10"
+        className="relative h-screen flex items-center justify-center overflow-hidden"
       >
+        {/* Floating Amla Top */}
         <Image
           src="/images/amla.png"
-          alt="Blur Amla"
-          width={300}
-          height={300}
-          className="amla absolute -top-60 left-1/2 -translate-x-1/2 blur-[8px] rotate-12"
+          alt="Amla"
+          width={200}
+          height={200}
+          className="amla absolute top-10 -rotate-40 left-4/4 -translate-x-1/2"
         />
 
+        {/* Bottom Right Amla */}
         <Image
-          src="/images/leaves/leaf1.png"
+          src="/images/amla.png"
+          alt="Amla"
+          width={200}
+          height={200}
+          className="amla absolute bottom-10 right-70 rotate-45"
+        />
+
+        {/* Bottom Center Blur Amla */}
+        <Image
+          src="/images/amla.png"
           alt="Amla"
           width={250}
           height={250}
-          className="amla absolute w-80 -right-40 -bottom-20 blur-[4px]"
+          className="amla absolute -bottom-20 left-1/3 blur-md opacity-80"
         />
 
+        {/* Right Decorative Leaf */}
         <Image
-          src="/images/leaves/leaf3.png"
+          src="/images/leaves/leaf1.png"
           alt="Leaf"
           width={250}
           height={250}
-          className="leaf absolute -left-40 rotate-100 -top-90"
+          className="leaf absolute -left-40 rotate-120 -top-3/6 blur-[2px]"
         />
 
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="w-[750px] bg-white rounded-[40px] shadow-md flex items-center justify-between px-10 pt-2 mb-12 transition hover:shadow-xl"
-          >
-            <div className="flex items-center gap-2">
-              <Image
-                src="/images/product_3.png"
-                alt="Product"
-                width={100}
-                height={100}
-              />
-
-              <div>
-                <h2 className="text-2xl font-semibold text-[#4E482E]">
-                  {product.name}
-                </h2>
-                <p className="text-sm text-gray-500">{product.subtitle}</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center bg-[#A6B11E] rounded-2xl px-3 py-3 text-white">
-              <button
-                onClick={() => decreaseQty(product.id)}
-                className="text-2xl px-4"
-              >
-                −
-              </button>
-
-              <span className="text-xl px-6">{cart[product.id] || 1}</span>
-
-              <button
-                onClick={() => increaseQty(product.id)}
-                className="text-2xl px-4"
-              >
-                +
-              </button>
-            </div>
+        <div className="w-full max-w-350 flex items-center justify-between z-10">
+          {/* LEFT SIDE PRODUCT IMAGE */}
+          <div className="relative max-w-6xl h-1/2 flex items-end justify-center w-1/2">
+            <Image
+              src="/images/oil/product1.png"
+              alt="Hair Oil"
+              width={1000}
+              height={1000}
+              className="object-contain w-200 h-200"
+            />
           </div>
-        ))}
+
+          {/* RIGHT SIDE CONTENT */}
+          <div className="w-1/2 pl-20 text-[#4E482E]">
+            <h1 className="text-6xl font-bold mb-4">Hair Oil</h1>
+
+            <h3 className="text-xl font-semibold mb-6">
+              Lorem Ipsum is simply dummy
+            </h3>
+
+            <p className="text-lg leading-relaxed mb-8 text-[#6D6A5F]">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries.
+            </p>
+            <Button bgColor="#4E482E" title="Add to cart" />
+          </div>
+        </div>
       </section>
 
       {/* REVIEW SECTION */}
@@ -180,7 +163,7 @@ export default function ProductPage() {
 
         <img
           src="/images/amla.png"
-          className="amla absolute -top-10 left-1/2 -translate-x-1/2 blur-[8px] rotate-12 w-72"
+          className="amla absolute -top-10 left-1/2 -translate-x-1/2 blur-sm rotate-12 w-72"
         />
 
         <img
@@ -201,14 +184,14 @@ export default function ProductPage() {
           alt="Leaf"
           width={250}
           height={250}
-          className="leaf absolute w-80 -right-40 bottom-20 blur-[4px]"
+          className="leaf absolute w-80 -right-40 bottom-20 blur-xs"
         />
 
         <div className="flex gap-12 relative z-10">
           {["Ravina", "Heena", "Ravina"].map((name, index) => (
             <div
               key={index}
-              className="w-[380px] bg-white rounded-[40px] shadow-xl overflow-hidden"
+              className="w-95 bg-white rounded-[40px] shadow-xl overflow-hidden"
             >
               <div className="p-10 text-[#4E482E] leading-relaxed">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
