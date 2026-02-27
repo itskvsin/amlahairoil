@@ -94,7 +94,7 @@ export default function ProductPage() {
       ref={containerRef}
       className={`bg-[#F4F3EE] min-h-screen relative overflow-hidden ${lexend.className}`}
     >
-      <Navbar btnColor="black" />
+      <Navbar />
 
       {/* PRODUCT SECTION */}
       <section
@@ -106,7 +106,7 @@ export default function ProductPage() {
           alt="Blur Amla"
           width={300}
           height={300}
-          className="amla absolute -top-60 left-1/2 -translate-x-1/2 blur-[8px] rotate-12"
+          className="amla absolute -top-60 left-1/2 -translate-x-1/2 blur-sm rotate-12"
         />
 
         <Image
@@ -114,7 +114,7 @@ export default function ProductPage() {
           alt="Amla"
           width={250}
           height={250}
-          className="amla absolute w-80 -right-40 -bottom-20 blur-[4px]"
+          className="amla absolute w-80 -right-40 -bottom-20 blur-xs"
         />
 
         <Image

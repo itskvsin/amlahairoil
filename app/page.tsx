@@ -105,7 +105,7 @@ export default function Home() {
   });
 
   return (
-    <main className={`bg-white ${lexend.className} pointer-events-none overflow-hidden`}>
+    <main className={`bg-white ${lexend.className} overflow-hidden`}>
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
 
       <Navbar />
