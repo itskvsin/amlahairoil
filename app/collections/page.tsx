@@ -40,7 +40,7 @@ export default function CollectionsPage() {
       ref={containerRef}
       className={`relative bg-[#F4F3EE] ${lexend.className}`}
     >
-      <Navbar btnColor="black" />
+      <Navbar />
 
       {/* ================= FIXED BACKGROUND ================= */}
 

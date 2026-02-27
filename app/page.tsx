@@ -11,6 +11,9 @@ import { ReactLenis } from "lenis/react";
 import Lenis from "lenis";
 import Image from "next/image";
 
+import Cal, { getCalApi } from "@calcom/embed-react";
+import Footer from "@/components/layout/Footer";
+
 // import Image from "next/image";
 
 const lexend = Lexend({
@@ -170,7 +173,7 @@ export default function Home() {
         </h1>
         <img
           src="/images/leaves/leaf1.png"
-          className="leaf leaf-3 absolute w-160 -bottom-5/14 left-46 rotate-20"
+          className="leaf leaf-3 absolute w-160 -bottom-7/14 left-46 rotate-20"
         />
         <img
           src="/images/leaves/leaf3.png"

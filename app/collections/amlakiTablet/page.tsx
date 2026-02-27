@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "@/components/Button";
+import Review from "@/components/Review";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,7 +74,7 @@ export default function ProductPage() {
       ref={containerRef}
       className={`bg-[#F4F3EE] min-h-screen relative overflow-hidden ${lexend.className}`}
     >
-      <Navbar btnColor="black" />
+      <Navbar />
 
       {/* ================= PRODUCT DETAILS ================= */}
       <section
@@ -153,7 +154,7 @@ export default function ProductPage() {
       </section>
 
       {/* REVIEW SECTION */}
-      <section
+      {/* <section
         ref={leavesRef}
         className="relative min-h-screen bg-[#F4F3EE] flex flex-col items-center justify-center py-40"
       >
@@ -210,7 +211,8 @@ export default function ProductPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+      <Review />
     </main>
   );
 }
