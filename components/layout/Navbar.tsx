@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
 const Navbar = () => {
   return (
     <div
-      className={`${dmSans.className} z-99 bg-transparent text-black fixed h-40 text-2xl font-600 flex items-center right-1/5 w-6xl font-semibold`}
+      className={`${dmSans.className} z-999 bg-transparent text-black fixed h-40 text-2xl font-600 flex items-center right-1/5 w-6xl font-semibold`}
     >
       <div className="flex items-center justify-between w-full">
         <div className="img flex items-center">
@@ -40,7 +40,7 @@ const Navbar = () => {
             Contact
           </Link>
         </div>
-        <div className="button">
+        <div>
           <Link href="/cart" className="cursor-pointer">
             <div className="p-4 bg-white rounded-full">
               <FaShoppingCart className="h-6 w-6 " />
