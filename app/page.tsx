@@ -108,7 +108,7 @@ export default function Home() {
     <main className={`bg-white ${lexend.className} overflow-hidden`}>
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
 
-      <Navbar btnColor="black" />
+      <Navbar />
 
       <BottleScene />
 
@@ -186,7 +186,7 @@ export default function Home() {
       </section>
 
       <section className="h-screen bg-linear-to-l  from-[#FFFEFE26] to-[#DFE2D2] text-[#4E482E] font-lexend flex items-center justify-center">
-        <div className="max-w-7xl p-14 flex justify-between items-center gap-75">
+        <div id="ourStory"  className="max-w-7xl p-14 flex justify-between items-center gap-75">
           <Image
             src="/images/p1.png"
             alt="Bottle"
