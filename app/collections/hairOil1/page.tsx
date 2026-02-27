@@ -148,7 +148,7 @@ export default function ProductPage() {
               type and scrambled it to make a type specimen book. It has
               survived not only five centuries.
             </p>
-            <Button bgColor="#4E482E" title="Add to cart" />
+            <AddedToCart id="hairoil1" name="Hair Oil 1" price={200} img={"/images/oil/product1.png"}/>
           </div>
         </div>
       </section>

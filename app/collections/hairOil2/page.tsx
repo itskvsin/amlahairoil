@@ -10,6 +10,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "@/components/Button";
 import Review from "@/components/Review";
+import AddToCart from "@/components/AddedToCart";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -150,7 +151,12 @@ export default function ProductPage() {
               survived not only five centuries.
             </p>
 
-            <Button bgColor="#4E482E" title="Add to cart" />
+            <AddedToCart
+              id="hairoil2"
+              name="Hair Oil 2"
+              price={290}
+              img={"/images/oil/product2.png"}
+            />
           </div>
         </div>
       </section>

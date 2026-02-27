@@ -10,6 +10,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "@/components/Button";
 import Review from "@/components/Review";
+import AddToCart from "@/components/AddedToCart";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -149,7 +150,12 @@ export default function ProductPage() {
               type and scrambled it to make a type specimen book. It has
               survived not only five centuries.
             </p>
-            <Button bgColor="#4E482E" title="Add to cart" />
+            <AddedToCart
+              id="haridaTablet"
+              name="Harida Tablet"
+              price={290}
+              img={"/images/tablets/product2.png"}
+            />
           </div>
         </div>
       </section>
