@@ -104,7 +104,7 @@ export default function CollectionsPage() {
           HAIR OIL
         </h1>
 
-        <div className="flex gap-20 mt-10">
+        <div className="flex gap-10 mt-1">
           <Link href="/collections/hairOil1">
             {" "}
             <ProductCard image="/images/oil/product1.png" title="Hair Oil" />
@@ -126,7 +126,7 @@ export default function CollectionsPage() {
           HAIR TABLETS
         </h1>
 
-        <div className="flex gap-20 mt-20">
+        <div className="flex gap-10 mt-1">
           <Link href="/collections/haridaTablet">
             {" "}
             <ProductCard
@@ -154,7 +154,7 @@ export default function CollectionsPage() {
           HAIR LEPA
         </h1>
 
-        <div className="mt-20">
+        <div className="mt-1">
           <Link href="/collections/hairLepa">
             {" "}
             <ProductCard
